@@ -3,10 +3,11 @@ import './todolist.scss'
 
 const TodoList = props => (
   <ul id="todo-list-wrapper">
-    {props.items.map(item => (
-      <li key={item.id}>
-        <span>{item.title}</span>
-        <button onClick={() => props.removeItem(item)}>Remove</button>
+    {props.todos.map(todo => (
+      <li key={todo.id}>
+        <span>{todo.title}</span>
+        <p>{todo.description}</p>
+        <button onClick={() => props.removeItem(todo)}>Remove</button>
       </li>
     ))}
   </ul>
